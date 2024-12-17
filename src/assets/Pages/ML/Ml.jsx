@@ -7,7 +7,7 @@ import { useSnapshot } from "valtio";
 import Regression from "./Regression/Regression";
 import Rf from "./RandomForest/Rf";
 import Dt from "./Decision_Tree/Decision_tree";
-import Log_Reg from "./Logistics_Reg/Log_reg";
+import Log_reg from "./Logistics_Reg/Log_reg";
 
 function Ml() {
   const snap = useSnapshot(state);
@@ -23,7 +23,7 @@ function Ml() {
             {state.AlgoSelected === "Random Forest" ? <Rf /> : <></>}
             {state.AlgoSelected === "Decision Tree" ? <Dt /> : <></>}
             {state.AlgoSelected === "Logistics Regression" ? (
-              <Log_Reg />
+              <Log_reg />
             ) : (
               <></>
             )}
