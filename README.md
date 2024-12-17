@@ -13,4 +13,4 @@ Algorithm Visualizer – your go-to platform for exploring data structures and m
 **Server:** FastAPI
 
 ## Link to website
-https://657dc9298b2c28456944e054--lively-tiramisu-05fb3d.netlify.app/
+Play around with the AlgoViz - [here](https://algo-viz-live.vercel.app/)
