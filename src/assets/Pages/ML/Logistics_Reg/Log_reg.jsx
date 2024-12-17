@@ -5,18 +5,16 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../../components/Loading";
 
-function Log_Reg() {
+function Log_reg() {
   const [accuracy, setAccuracy] = useState(0);
   const [dataSet, setDataset] = useState("Dataset-1");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const get_data = async (reset) => {
-    setLoading(true)
-    const result = await api.get(
-      `/log_regression/${dataSet}/${reset}`
-    );
-    setLoading(false)
+    setLoading(true);
+    const result = await api.get(`/log_regression/${dataSet}/${reset}`);
+    setLoading(false);
     setImage(result.data.image);
     setAccuracy(result.data.accuracy);
   };
@@ -34,8 +32,8 @@ function Log_Reg() {
   };
 
   const handleSubmit = () => {
-   get_data(false);
-  }
+    get_data(false);
+  };
 
   return (
     <div className="flex max-sm:flex-col w-[100%] h-[100%] justify-evenly items-center max-xl:gap-5 ">
@@ -74,7 +72,9 @@ function Log_Reg() {
         </div>
       </div>
       <div className=" flex justify-center items-center ">
-        {loading? <Loading/> : (
+        {loading ? (
+          <Loading />
+        ) : (
           <img
             className="w-[70%] max-xl:w-[80%] max-sm:w-[90%] h-[auto] rounded-lg shadow-lg"
             src={`data:image/png;base64,${image}`}
@@ -86,4 +86,4 @@ function Log_Reg() {
   );
 }
 
-export default Log_Reg;
+export default Log_reg;
